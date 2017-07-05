@@ -1,3 +1,11 @@
+app_comment:
+    resource: "@AppBundle/Controller/CommentController.php"
+    type:     annotation
+
+app_task:
+    resource: "@AppBundle/Controller/TaskController.php"
+    type:     annotation
+
 app_category:
     resource: "@AppBundle/Controller/CategoryController.php"
     type:     annotation

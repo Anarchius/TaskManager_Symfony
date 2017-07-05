@@ -12,4 +12,10 @@ use Doctrine\ORM\EntityRepository;
  */
 class TaskRepository extends EntityRepository
 {
+
+    public function findForCategory(Category $category)
+    {
+        return $this->findBy('category_id', $category->getId());
+    }
+
 }

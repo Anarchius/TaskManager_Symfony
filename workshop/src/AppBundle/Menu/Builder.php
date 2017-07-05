@@ -20,5 +20,7 @@ class Builder implements ContainerAwareInterface
         $menu->addChild('Login', array('route' => 'fos_user_security_login'));
 
         return $menu;
+
     }
+
 }

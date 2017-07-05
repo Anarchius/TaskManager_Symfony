@@ -18,3 +18,4 @@ class CategoryRepository extends EntityRepository
         return $this->findBy('user_id', $user->getId());
     }
 }
+
