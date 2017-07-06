@@ -16,6 +16,12 @@
         </tbody>
     </table>
 
+    <hr />
+    {% for task in tasks %}
+        {{ task.name }}<br>
+    {% endfor %}
+    <hr />
+
     <ul>
         <li>
             <a href="{{ path('category_index') }}">Back to the list</a>

@@ -67,10 +67,13 @@ class CategoryController extends Controller
      */
     public function showAction(Category $category)
     {
+        // @todo sprawdzic wlasciciela kategorii, czy to jest aktualnie zalogowany uzytkownik
+
         $deleteForm = $this->createDeleteForm($category);
 
         return $this->render('category/show.html.twig', array(
             'category' => $category,
+            'tasks' => $category->getTasks(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -134,5 +137,16 @@ class CategoryController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function menuListAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $categories = $em->getRepository('AppBundle:Category')->findByUser($this->getUser());
+
+        return $this->render('category/menuList.html.twig', array(
+            'categories' => $categories,
+        ));
     }
 }

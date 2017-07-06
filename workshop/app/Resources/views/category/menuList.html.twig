@@ -1,0 +1,9 @@
+{% for category in categories %}
+    <a href="{{ path('category_show', { 'id': category.id }) }}" class="btn btn-default" style="margin-bottom: 10px;">
+        <span class="fa fa-{{ category.icon }}">&nbsp;</span> {{ category.name }}
+    </a>
+    <br>
+{% endfor %}
+<p>
+    <a href="/category/new" class="btn btn-default" >New category</a>
+</p>

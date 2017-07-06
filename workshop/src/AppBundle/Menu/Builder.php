@@ -18,7 +18,7 @@ class Builder implements ContainerAwareInterface
         $menu->addChild('Categories', array('route' => 'category_index'));
         $menu->addChild('Register', array('route' => 'fos_user_registration_register'));
         $menu->addChild('Login', array('route' => 'fos_user_security_login'));
-
+        
         return $menu;
 
     }
