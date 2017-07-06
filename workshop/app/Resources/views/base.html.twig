@@ -23,36 +23,38 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-1">
-            <img src="Logo.jpg" alt="Logo" style="width:80px;height:80px;">
+        <div class="col-md-12">
+            <img src="{{ asset('images/logo.jpg') }}" width="185" height="185"/>
 
+            <img src="{{ asset('images/banner.jpg') }}" width="950" height="185" />
         </div>
-        <div class="col-md-11">
-            <h1>Cover image</h1>
-        </div>
-        <hr>
     </div>
+
     <div class="row">
         <div class="col-md-12">
-            <h1>Menu</h1>
-            {{ knp_menu_render('AppBundle:Builder:mainMenu') }}
+            <br>
+           {{ knp_menu_render('AppBundle:Builder:mainMenu', {'currentClass': 'active'}) }}
             <hr>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-2">
-            <h1>Your Categories</h1>
             {{ render(controller('AppBundle:Category:menuList')) }}
+            <hr>
         </div>
         <div class="col-md-8">
             {% block body %}{% endblock %}
             <hr>
         </div>
         <div class="col-md-2">
-            <h1>Recent Tasks</h1>
+            <p>
+                <a href="/task/new" class="btn btn-lg btn-success" >Add new task</a>
+            </p>
             <hr>
         </div>
     </div>
+
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
