@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>{% block title %}Task Manager{% endblock %}</title>
+    <title>{% block title %}Tasky{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
     <!-- Latest compiled and minified CSS -->
@@ -41,15 +41,16 @@
     <div class="row">
         <div class="col-md-2">
             {{ render(controller('AppBundle:Category:menuList')) }}
-            <hr>
         </div>
         <div class="col-md-8">
             {% block body %}{% endblock %}
-            <hr>
         </div>
         <div class="col-md-2">
             <p>
-                <a href="/task/new" class="btn btn-lg btn-success" >Add new task</a>
+                <a href="/task/new" class="btn btn-lg btn-success" >+Add new task</a>
+            </p>
+            <p>
+                <a href="/task" class="btn btn-lg btn-success" >Show my tasks</a>
             </p>
             <hr>
         </div>
@@ -59,6 +60,14 @@
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
         <div class="col-md-4"></div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <hr />
+                <small>Created by Adrian Janicki @2017</small>
+            <hr>
+        </div>
     </div>
 </div>
 
