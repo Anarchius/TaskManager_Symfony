@@ -31,10 +31,15 @@
             </tr>
         </tbody>
     </table>
-
+    <p align="center">
     <a href="{{ path('task_index') }}" class="btn btn-info">Back to the list</a><br>
+    </p>
+    <p align="center">
     <a href="{{ path('task_edit', { 'id': task.id }) }}" class="btn btn-default">Edit</a>
+    </p>
     {{ form_start(delete_form) }}
+<p align="center">
         <input type="submit" value="Delete" class="btn btn-danger">
+</p>
     {{ form_end(delete_form) }}
 {% endblock %}

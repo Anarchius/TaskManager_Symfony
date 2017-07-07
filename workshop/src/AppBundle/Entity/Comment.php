@@ -123,7 +123,7 @@ class Comment
     /**
      * Get commentAuthor
      *
-     * @return string 
+     * @return string
      */
     public function getCommentAuthor()
     {
@@ -151,5 +151,9 @@ class Comment
     public function getTask()
     {
         return $this->task;
+    }
+
+    public function __toString() {
+        return $this->name;
     }
 }

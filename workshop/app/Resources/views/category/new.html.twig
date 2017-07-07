@@ -2,11 +2,13 @@
 
 {% block body %}
     <h1>Category creation</h1>
-
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+    {{ form_widget(form) }}
+    <p align="center">
         <input type="submit" value="Create" class="btn btn-info"/>
+    </p>
     {{ form_end(form) }}
-
-    <a href="{{ path('category_index') }}" class="btn btn-default">Back to the list</a>
+    <p align="center">
+        <a href="{{ path('category_index') }}" class="btn btn-default">Back to the list</a>
+    </p>
 {% endblock %}

@@ -3,17 +3,44 @@
 {% block body %}
     <h1>{{ category.name }}</h1>
 
-
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Complete</th>
+            <th>Prior</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task.name }}</td>
+                <td>{% if task.date %}{{ task.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ task.description }}</td>
+                <td>{% if task.complete %}Yes{% else %}No{% endif %}</td>
+                <td>{{ task.prior }}</td>
+                <td>
+                    <a href="{{ path('task_show', { 'id': task.id }) }}" class="btn btn-default btn-sm">show</a>
+                    <a href="{{ path('task_edit', { 'id': task.id }) }}" class="btn btn-success btn-sm">edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     <hr />
-    {% for task in tasks %}
-        {{ task.name }}<br>
-    {% endfor %}
-    <hr />
-
-    <a href="{{ path('category_index') }}" class="btn btn-info">Back to the list</a><br>
-    <a href="{{ path('category_edit', { 'id': category.id }) }}" class="btn btn-default">Edit</a>
+    <p align="center">
+        <a href="{{ path('category_index') }}" class="btn btn-info">Back to the list</a><br>
+    </p>
+    <p align="center">
+        <a href="{{ path('category_edit', { 'id': category.id }) }}" class="btn btn-default">Edit</a>
+    </p>
     {{ form_start(delete_form) }}
-        <input type="submit" value="Delete" class="btn btn-danger">
+        <p align="center">
+            <input type="submit" value="Delete" class="btn btn-danger">
+        </p>
     {{ form_end(delete_form) }}
-
+    </p>
 {% endblock %}

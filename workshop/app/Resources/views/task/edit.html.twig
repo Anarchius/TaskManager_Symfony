@@ -4,14 +4,18 @@
     <h1>Task edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" class="btn btn-info" />
+    {{ form_widget(edit_form) }}
+    <p align="center">
+        <input type="submit" value="Edit" class="btn btn-info"/>
+    </p>
     {{ form_end(edit_form) }}
 
-
-    <a href="{{ path('task_index') }}" class="btn btn-default">Back to the list</a>
-
+    <p align="center">
+        <a href="{{ path('task_index') }}" class="btn btn-default">Back to the list</a>
+    </p>
     {{ form_start(delete_form) }}
+    <p align="center">
         <input type="submit" value="Delete" class="btn btn-danger">
+    </p>
     {{ form_end(delete_form) }}
 {% endblock %}

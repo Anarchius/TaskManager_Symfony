@@ -5,20 +5,18 @@
 
     <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Complete</th>
-                <th>Prior</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Complete</th>
+            <th>Prior</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for task in tasks %}
             <tr>
-                <td><a href="{{ path('task_show', { 'id': task.id }) }}">{{ task.id }}</a></td>
                 <td>{{ task.name }}</td>
                 <td>{% if task.date %}{{ task.date|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ task.description }}</td>
@@ -32,6 +30,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('task_new') }}" class="btn btn-info">Create a new task</a>
+    <p align="center">
+        <a href="{{ path('task_new') }}" class="btn btn-info">Create a new task</a>
+    </p>
 {% endblock %}

@@ -3,20 +3,18 @@
 {% block body %}
     <h1>Comments list</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Commentdate</th>
-                <th>Commenttext</th>
-                <th>Commentauthor</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Date</th>
+            <th>Comment text</th>
+            <th>Comment author</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
         {% for comment in comments %}
             <tr>
-                <td><a href="{{ path('comment_show', { 'id': comment.id }) }}">{{ comment.id }}</a></td>
                 <td>{% if comment.commentDate %}{{ comment.commentDate|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ comment.commentText }}</td>
                 <td>{{ comment.commentAuthor }}</td>
@@ -34,10 +32,7 @@
         {% endfor %}
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('comment_new') }}">Create a new comment</a>
-        </li>
-    </ul>
+    <p align="center">
+        <a href="{{ path('comment_new') }}" class="btn btn-info">Create a new comment</a>
+    </p>
 {% endblock %}
