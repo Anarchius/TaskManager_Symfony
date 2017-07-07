@@ -5,36 +5,30 @@
 
     <table>
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ comment.id }}</td>
-            </tr>
-            <tr>
-                <th>Commentdate</th>
-                <td>{% if comment.commentDate %}{{ comment.commentDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Commenttext</th>
-                <td>{{ comment.commentText }}</td>
-            </tr>
-            <tr>
-                <th>Commentauthor</th>
-                <td>{{ comment.commentAuthor }}</td>
-            </tr>
+        <tr>
+            <th>Written on</th>
+            <td>{% if comment.commentDate %}{{ comment.commentDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+        </tr>
+        <tr>
+            <th>Comment</th>
+            <td>{{ comment.commentText }}</td>
+        </tr>
+        <tr>
+            <th>Author</th>
+            <td>{{ comment.commentAuthor }}</td>
+        </tr>
         </tbody>
     </table>
+    <p align="center">
+        <a href="{{ path('comment_index') }}" class="btn btn-info">Back to the list</a>
+    </p>
+    <p align="center">
+        <a href="{{ path('comment_edit', { 'id': comment.id }) }}" class="btn btn-default">Edit</a>
+    </p>
+    {{ form_start(delete_form) }}
+    <p align="center">
+        <input type="submit" value="Delete" class="btn btn-danger">
+    </p>
+    {{ form_end(delete_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('comment_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('comment_edit', { 'id': comment.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
 {% endblock %}

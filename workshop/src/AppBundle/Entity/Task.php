@@ -256,4 +256,9 @@ class Task
     {
         return $this->comments;
     }
+
+    public function __toString()
+    {
+        return  $this->name;
+    }
 }

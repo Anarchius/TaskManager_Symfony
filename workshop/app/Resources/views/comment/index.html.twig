@@ -19,14 +19,9 @@
                 <td>{{ comment.commentText }}</td>
                 <td>{{ comment.commentAuthor }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('comment_show', { 'id': comment.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('comment_edit', { 'id': comment.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('comment_show', { 'id': comment.id }) }}" class="btn btn-default btn-sm">show</a>
+
+                    <a href="{{ path('comment_edit', { 'id': comment.id }) }}" class="btn btn-success btn-sm">edit</a>
                 </td>
             </tr>
         {% endfor %}

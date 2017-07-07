@@ -16,7 +16,7 @@ class Comment
     /**
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Task", inversedBy="comments")
-     * @ORM\JoinColumn(name="task_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="task_id", referencedColumnName="id", nullable=false)
      */
     private $task;
 
@@ -50,6 +50,10 @@ class Comment
      */
     private $commentAuthor;
 
+    public function __construct()
+    {
+        $this->commentDate = new \DateTime();
+    }
 
     /**
      * Get id
@@ -154,6 +158,6 @@ class Comment
     }
 
     public function __toString() {
-        return $this->name;
+        return $this->commentText;
     }
 }
