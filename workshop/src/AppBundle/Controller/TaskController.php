@@ -24,7 +24,7 @@ class TaskController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $tasks = $em->getRepository('AppBundle:Task')->findAll();
+        $tasks = $em->getRepository('AppBundle:Task')->findForUser($this->getUser());
 
         return $this->render('task/index.html.twig', array(
             'tasks' => $tasks,

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -16,6 +17,17 @@ class TaskRepository extends EntityRepository
     public function findForCategory(Category $category)
     {
         return $this->findBy('category_id', $category->getId());
+    }
+
+    public function findForUser(User $user)
+    {
+        return $this->getEntityManager()->createQuery(
+            'SELECT t 
+             FROM AppBundle:Task t
+             JOIN AppBundle:Category c
+             WHERE c.user = :user')
+            ->setParameter('user', $user)
+            ->getResult();
     }
 
 }
