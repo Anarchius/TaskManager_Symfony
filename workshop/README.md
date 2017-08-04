@@ -1,13 +1,40 @@
-workshop
-========
+## Task Manager "Tasky"
 
-1. Project functionality
 
-2. Review
+### Project functionality
 
-3. Future of project
+1. Create your own account.
 
-4. Feedback
+[img]
 
- 
-A Symfony project created on July 5, 2017, 9:09 am.
+2. Add Categories where you can store your tasks.
+
+[img]
+
+3. Create tasks.
+
+[img]
+
+4. Add time, piority and description to your tasks.
+
+[img]
+
+5. You can also add comments, which will help you in proceeding with your tasks.
+
+[img]
+
+### Review
+
+Task manager is based on Symfony framework v.2.2
+
+### Future of project
+
+Things that are planned to add in the future:
+
+1. Personal profile with statistics (ex. done/undone tasks).
+2. Adding images as a part of user's task.
+3. 
+
+### Feedback
+
+Feel free to msg me with your problems or sugestions.
